@@ -1,5 +1,5 @@
 import React from 'react';
-import gif from './animation.gif';
+import gif from '../../public/animation.gif';
 
 const GifComponent = () => {
   return (
