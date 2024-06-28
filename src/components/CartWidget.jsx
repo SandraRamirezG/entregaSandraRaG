@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link }  from 'react-router-dom';
+
 
 const CartWidget = () => {
   return (
-    <div className="cart-widget">
-      <i className="fa fa-shopping-cart"></i>
-      <span className="badge badge-primary">5</span>
-    </div>
+    <Link to="/cart">
+      <div className="cart-widget">
+        <img src="./images/cart-icon.png" alt="Cart" />
+        <span>3</span> {/* Example of cart item count */}
+      </div>
+    </Link>
+    
   );
 }
 

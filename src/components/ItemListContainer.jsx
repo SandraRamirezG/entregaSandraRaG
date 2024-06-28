@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import " /ItemListContainer.css";
+import './ItemListContainer.css';
 
 // Simulación de una llamada a un API
 const mockItems = [
-    { id: '1', category: 'documentacion', name: 'Documentación de Procesos', image: "/images/DF Generico restaurante.jpg"},
+    { id: '1', category: 'documentacion', name: 'Documentación de Procesos', image: "https://images.unsplash.com/photo-1517705008129-6c53bdd40b7e?fit=crop&w=800&h=800" },
     { id: '2', category: 'implementacion', name: 'Implementación BPM', image: "/images/control.jpg" },
-    { id: '3', category: 'auditorias', name: 'Auditoría Interna', image: "/images/controlbotella.jpg" },
+    { id: '3', category: 'auditorias', name: 'Auditoría Interna', image: "https://images.unsplash.com/photo-1536895058336-91c9e9fe3fc1?fit=crop&w=800&h=800" },
     { id: '4', category: 'prevencion', name: 'Prevención de Riesgos', image: "/images/listachequeo.jpg" }
 ];
 
 const ItemListContainer = () => {
-    const { categoryId } = useParams();
+    const { id } = useParams();
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const filteredItems = categoryId 
-            ? mockItems.filter(item => item.category === categoryId) 
+        const filteredItems = id 
+            ? mockItems.filter(item => item.category === id) 
             : mockItems;
         setItems(filteredItems);
-    }, [categoryId]);
+    }, [id]);
 
     return (
-        <div>
-            <h1>{categoryId ? `Categoría: ${categoryId}` : 'Lista de Productos'}</h1>
-            <ul>
+        <div className="item-list-container">
+            <h1>{id ? `Categoría: ${id}` : 'Lista de Productos'}</h1>
+            <ul className="item-list">
                 {items.map(item => (
-                    <li key={item.id}>
-                        <Link to={`/item/${item.id}`}>{item.name}</Link>
+                    <li key={item.id} className="item">
+                        <Link to={`/item/${item.id}`}>
+                            <img src={item.image} alt={item.name} className="item-image" />
+                            <h2>{item.name}</h2>
+                        </Link>
                     </li>
                 ))}
             </ul>
