@@ -4,9 +4,9 @@ import './ItemDetailContainer.css';
 
 // Simulación de una llamada a un API
 const mockItems = [
-    { id: '1', category: 'documentacion', name: 'Documentación de Procesos', image: "https://images.unsplash.com/photo-1517705008129-6c53bdd40b7e?fit=crop&w=800&h=800" },
+    { id: '1', category: 'documentacion', name: 'Documentación de Procesos', image: "/images/controlbotella.jpg" },
     { id: '2', category: 'implementacion', name: 'Implementación BPM', image: "/images/control.jpg" },
-    { id: '3', category: 'auditorias', name: 'Auditoría Interna', image: "https://images.unsplash.com/photo-1536895058336-91c9e9fe3fc1?fit=crop&w=800&h=800" },
+    { id: '3', category: 'auditorias', name: 'Auditoría Interna', image: "/images/inspeccion.jpg" },
     { id: '4', category: 'prevencion', name: 'Prevención de Riesgos', image: "/images/listachequeo.jpg" }
 ];
 
